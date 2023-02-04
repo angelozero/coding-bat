@@ -21,20 +21,18 @@ public class FrontBack {
 
     public static String frontBack(String str) {
 
-        String palavraInvertida = "";
-        String[] listaDaPalavra = str.split("");
-        int ultimaPosicao = listaDaPalavra.length - 1;
+        String frontBackWord = "";
+        String[] letters = str.split("");
 
-        String primeiraLetra = listaDaPalavra[0];
-        String ultimaLetra = listaDaPalavra[ultimaPosicao];
-        listaDaPalavra[0] = ultimaLetra;
-        listaDaPalavra[ultimaPosicao] = primeiraLetra;
+        String firstLetter = letters[0];
+        letters[0] = letters[letters.length - 1];
+        letters[letters.length - 1] = firstLetter;
 
-        for (int x = 0; x < listaDaPalavra.length; x++) {
-            palavraInvertida += listaDaPalavra[x];
+        for (int x = 0; x < letters.length; x++) {
+            frontBackWord += letters[x];
         }
 
-        return palavraInvertida;
+        return frontBackWord;
     }
 
 }
